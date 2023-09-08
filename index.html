@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>veterinária</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header class="veterinaria">
+        <div>
+            <h1 class="logo">Veterinária Makers</h1>
+        </div>
+        <div class="horario">
+            <p class="atendimento">Atendimento</p>
+            <h2>Segunda a sexta
+                <br>até às 22:00 horas
+            </h2>
+        </div>
+        <div></div>
+        <div>
+            <button class="contato">CONTATO</button>
+        </div>
+    </header>
+    <div class="cadastrese">
+        <div></div>
+        <h1>Cadastre o seu Animal</h1>
+        <button class="open-modal-btn" onclick="openModal()">Cadastre o seu animal</button>
+    </div>
+
+    <div id="seCadastre" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" style="float: right; cursor: pointer;">&times;</span>
+
+            <form id="cadastroForm" class="form">
+                <label for="nome">Nome:</label>
+                <input class="input" type="text" id="nome" required><br>
+
+                <label for="idade">Idade:</label>
+                <input class="input" type="number" id="idade" required><br>
+
+                <label for="raca">Raça:</label>
+                <input class="input" type="text" id="raca" required><br>
+
+                <label for="sexo">Sexo:</label>
+                <select class="input" id="sexo" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select><br>
+
+                <button class="btn" type="button" id="salvarBtn" onclick="salvarCadastro()" style="display:none;">Salvar</button>
+                <button class="btn" type="button" id="adicionarBtn" onclick="adicionarCadastro()" >Adicionar</button>
+            </form>
+
+        </div>
+    </div>
+
+
+     <button type="button" id="editarBtn" style="display: none;">Editar</button>
+
+     <div  id="editarModal" class="modal">
+         <div class="modal-content">
+             <h2>Editar Registro</h2>
+             <form id="editarForm" class="edite-forms">
+                 <label for="nomeEdit">Nome:</label>
+                 <input class="input" type="text" id="nomeEdit" required><br>
+ 
+                 <label for="idadeEdit">Idade:</label>
+                 <input class="input" type="number" id="idadeEdit" required><br>
+ 
+                 <label for="racaEdit">Raça:</label>
+                 <input class="input" type="text" id="racaEdit" required><br>
+ 
+                 <label for="sexoEdit">Sexo:</label>
+                 <select class="input" id="sexoEdit" required>
+                     <option value="masculino">Masculino</option>
+                     <option value="feminino">Feminino</option>
+                     <option value="outro">Outro</option>
+                 </select><br>
+ 
+                 <div class="botoes">
+                     <button class="btn" type="button" onclick="salvarEdicao()">Salvar</button>
+                     <button class="btn" type="button" onclick="fecharModal()">Cancelar</button>
+                 </div>
+             </form>
+         </div>
+     </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Raça</th>
+                <th>Sexo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="registros">
+        </tbody>
+    </table>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
